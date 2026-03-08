@@ -39,7 +39,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="gradient" size="sm" asChild>
-            <a href="#contact">Join Our Community</a>
+            <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer">Join Our Community</a>
           </Button>
         </div>
 
