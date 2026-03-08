@@ -37,10 +37,10 @@ const CTASection = () => {
           initial="hidden" animate={inView ? "visible" : "hidden"} variants={fadeUp} custom={2}
         >
           <Button variant="gradient" size="lg" asChild>
-            <a href="#">Join Our Community</a>
+            <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer">Join Our Community</a>
           </Button>
           <Button variant="ghost-glow" size="lg" asChild>
-            <a href="#">Follow on LinkedIn</a>
+            <a href="https://www.linkedin.com/company/btaji-crew" target="_blank" rel="noopener noreferrer">Follow on LinkedIn</a>
           </Button>
         </motion.div>
       </div>
