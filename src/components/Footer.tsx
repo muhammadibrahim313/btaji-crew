@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="border-t border-border py-8">
       <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
-          © 2025 BTAJI CREW. All rights reserved.
+          © 2026 BTAJI CREW. All rights reserved.
         </p>
         <p className="text-xs text-muted-foreground">btajicrew.primecast.me</p>
         <div className="flex items-center gap-4">
