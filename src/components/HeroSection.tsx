@@ -51,7 +51,7 @@ const HeroSection = () => {
             <a href="#team">Meet the Team</a>
           </Button>
           <Button variant="ghost-glow" size="lg" asChild>
-            <a href="#contact">Join Us</a>
+            <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer">Join Us</a>
           </Button>
         </motion.div>
       </div>
