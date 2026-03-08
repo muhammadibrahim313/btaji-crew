@@ -17,7 +17,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.6, delay: i * 0.08, ease: "easeOut" as const },
   }),
 };
 
@@ -53,7 +53,6 @@ const TeamSection = () => {
               variants={fadeUp}
               custom={i + 2}
             >
-              {/* Avatar */}
               <div className="relative mx-auto mb-4 w-20 h-20">
                 <div className="absolute inset-0 rounded-full gradient-bg opacity-60 group-hover:opacity-100 transition-opacity blur-sm" />
                 <div className="relative w-20 h-20 rounded-full gradient-bg flex items-center justify-center text-primary-foreground text-lg font-bold">
@@ -65,7 +64,6 @@ const TeamSection = () => {
                   </div>
                 )}
               </div>
-
               <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
               <p className="text-sm text-muted-foreground">{member.role}</p>
               {member.founder && (

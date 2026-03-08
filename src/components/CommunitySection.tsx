@@ -16,7 +16,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.6, delay: i * 0.08, ease: "easeOut" as const },
   }),
 };
 
@@ -46,7 +46,6 @@ const CommunitySection = () => {
           Explore our community spaces and activities
         </motion.p>
 
-        {/* Bento grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {activities.map((item, i) => (
             <motion.div

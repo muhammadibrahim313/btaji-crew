@@ -7,7 +7,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.6, delay: i * 0.1, ease: "easeOut" as const },
   }),
 };
 
@@ -17,8 +17,7 @@ const CTASection = () => {
 
   return (
     <section id="contact" className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
-      {/* Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[150px] animate-pulse-glow" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[150px] animate-pulse-glow" />
 
       <div className="container relative z-10 text-center">
         <motion.h2
