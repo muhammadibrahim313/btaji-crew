@@ -67,7 +67,7 @@ const TeamSection = () => {
               <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
               <p className="text-sm text-muted-foreground">{member.role}</p>
               {member.founder && (
-                <span className="inline-block mt-3 text-xs gradient-text font-medium px-3 py-1 rounded-full glass-card">
+                <span className="inline-block mt-3 text-xs font-medium px-3 py-1 rounded-full gradient-bg text-primary-foreground">
                   Founder
                 </span>
               )}
