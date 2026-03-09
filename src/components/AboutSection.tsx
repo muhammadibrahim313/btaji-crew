@@ -33,7 +33,7 @@ const CountUp = ({ target, duration = 1.5 }: { target: number; duration?: number
   return <span ref={ref}>{count}</span>;
 };
 
-const ease = [0.23, 1, 0.32, 1];
+const ease = [0.23, 1, 0.32, 1] as const;
 
 const AboutSection = () => {
   const ref = useRef(null);

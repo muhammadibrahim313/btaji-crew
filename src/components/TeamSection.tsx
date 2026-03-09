@@ -20,7 +20,7 @@ const team = [
   { name: "Hassan Mehmood", role: "Agentic AI Engineer", image: hassanImg, founder: false },
 ];
 
-const ease = [0.23, 1, 0.32, 1];
+const ease = [0.23, 1, 0.32, 1] as const;
 
 const TeamSection = () => {
   const ref = useRef(null);

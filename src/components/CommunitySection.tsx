@@ -11,7 +11,7 @@ const activities = [
   { icon: Megaphone, title: "Good Info", desc: "Curated news, opportunities, and updates from the AI/tech world.", span: "lg:col-span-2" },
 ];
 
-const ease = [0.23, 1, 0.32, 1];
+const ease = [0.23, 1, 0.32, 1] as const;
 
 const CommunitySection = () => {
   const ref = useRef(null);
