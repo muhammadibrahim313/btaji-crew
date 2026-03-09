@@ -2,14 +2,22 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Crown } from "lucide-react";
 
+import ibrahimImg from "@/assets/team/ibrahim.jpg";
+import bilalImg from "@/assets/team/muhammad_bilal.jfif";
+import tayyabImg from "@/assets/team/tayyab.jfif";
+import jawadImg from "@/assets/team/muhammad_jawad.jfif";
+import fakharImg from "@/assets/team/ahmad_fakhar.jfif";
+import imamaImg from "@/assets/team/imama_kainat.jfif";
+import hassanImg from "@/assets/team/hassan_mehmood.png";
+
 const team = [
-  { name: "Muhammad Ibrahim Qasmi", role: "Founder & Lead", initials: "MI", founder: true },
-  { name: "Muhammad Bilal", role: "Research Head & Software Engineer", initials: "MB", founder: false },
-  { name: "Tayo Sajjad", role: "Software Engineer & AI/ML Engineer", initials: "TS", founder: false },
-  { name: "Muhammad Jawad", role: "Data Analyst", initials: "MJ", founder: false },
-  { name: "Ahmed Fakar", role: "Analyst", initials: "AF", founder: false },
-  { name: "Imama Junaid", role: "Software Engineer", initials: "IJ", founder: false },
-  { name: "Hassan Mahmood", role: "Agentic AI Engineer", initials: "HM", founder: false },
+  { name: "Muhammad Ibrahim Qasmi", role: "Founder & Lead", image: ibrahimImg, founder: true },
+  { name: "Muhammad Bilal", role: "Research Head & Software Engineer", image: bilalImg, founder: false },
+  { name: "Tayyab Sajjad", role: "Software Engineer & AI/ML Engineer", image: tayyabImg, founder: false },
+  { name: "Muhammad Jawad", role: "Data Analyst", image: jawadImg, founder: false },
+  { name: "Ahmad Fakhar", role: "Analyst", image: fakharImg, founder: false },
+  { name: "Imama Kainat", role: "Software Engineer", image: imamaImg, founder: false },
+  { name: "Hassan Mehmood", role: "Agentic AI Engineer", image: hassanImg, founder: false },
 ];
 
 const fadeUp = {
@@ -55,9 +63,11 @@ const TeamSection = () => {
             >
               <div className="relative mx-auto mb-4 w-20 h-20">
                 <div className="absolute inset-0 rounded-full gradient-bg opacity-60 group-hover:opacity-100 transition-opacity blur-sm" />
-                <div className="relative w-20 h-20 rounded-full gradient-bg flex items-center justify-center text-primary-foreground text-lg font-bold">
-                  {member.initials}
-                </div>
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="relative w-20 h-20 rounded-full object-cover border-2 border-primary/30"
+                />
                 {member.founder && (
                   <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full gradient-bg flex items-center justify-center">
                     <Crown size={12} className="text-primary-foreground" />
