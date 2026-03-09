@@ -20,67 +20,92 @@ const team = [
   { name: "Hassan Mehmood", role: "Agentic AI Engineer", image: hassanImg, founder: false },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.08, ease: "easeOut" as const },
-  }),
-};
+const ease = [0.23, 1, 0.32, 1] as const;
 
 const TeamSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="team" className="py-24 md:py-32 relative" ref={ref}>
-      <div className="container">
-        <motion.p
-          className="text-sm uppercase tracking-widest text-primary mb-4 text-center"
-          initial="hidden" animate={inView ? "visible" : "hidden"} variants={fadeUp} custom={0}
-        >
-          The Crew
-        </motion.p>
-        <motion.h2
-          className="text-3xl md:text-5xl font-bold text-center mb-16 tracking-tight"
-          initial="hidden" animate={inView ? "visible" : "hidden"} variants={fadeUp} custom={1}
-        >
-          Meet the <span className="gradient-text">Team</span>
-        </motion.h2>
+    <section id="team" className="py-28 md:py-40 relative" ref={ref}>
+      <div className="section-divider absolute top-0" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {team.map((member, i) => (
+      <div className="container">
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease }}
+          >
+            <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary mb-6 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5">
+              The Crew
+            </span>
+          </motion.div>
+
+          <motion.h2
+            className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] font-display"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.1, ease }}
+          >
+            Meet the <span className="gradient-text">Team</span>
+          </motion.h2>
+        </div>
+
+        {/* Founder card - featured */}
+        <motion.div
+          className="max-w-lg mx-auto mb-10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2, ease }}
+        >
+          <div className="glass-card glass-card-hover rounded-3xl p-8 text-center relative overflow-hidden group">
+            {/* Subtle gradient glow behind founder */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-60 rounded-full bg-primary/5 blur-[60px]" />
+            </div>
+
+            <div className="relative">
+              <div className="relative mx-auto mb-6 w-28 h-28">
+                <div className="absolute -inset-1 rounded-full gradient-bg opacity-30 group-hover:opacity-60 transition-opacity duration-500 blur-sm" />
+                <img
+                  src={team[0].image}
+                  alt={team[0].name}
+                  className="relative w-28 h-28 rounded-full object-cover ring-2 ring-primary/20"
+                />
+                <div className="absolute -top-1 -right-1 w-8 h-8 rounded-full gradient-bg flex items-center justify-center shadow-lg">
+                  <Crown size={14} className="text-primary-foreground" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-1 font-display">{team[0].name}</h3>
+              <p className="text-sm text-muted-foreground mb-4">{team[0].role}</p>
+              <span className="inline-block text-xs font-semibold px-4 py-1.5 rounded-full gradient-bg text-primary-foreground tracking-wide uppercase">
+                Founder
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Rest of team */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+          {team.slice(1).map((member, i) => (
             <motion.div
               key={member.name}
-              className={`glass-card glass-card-hover rounded-2xl p-6 text-center transition-all duration-500 group ${
-                member.founder ? "sm:col-span-2 lg:col-span-1 ring-1 ring-primary/20" : ""
-              }`}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={fadeUp}
-              custom={i + 2}
+              className="glass-card glass-card-hover rounded-2xl p-6 text-center group"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 + i * 0.08, ease }}
             >
               <div className="relative mx-auto mb-4 w-20 h-20">
-                <div className="absolute inset-0 rounded-full gradient-bg opacity-60 group-hover:opacity-100 transition-opacity blur-sm" />
+                <div className="absolute -inset-0.5 rounded-full bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="relative w-20 h-20 rounded-full object-cover border-2 border-primary/30"
+                  className="relative w-20 h-20 rounded-full object-cover ring-1 ring-border group-hover:ring-primary/30 transition-all duration-500"
                 />
-                {member.founder && (
-                  <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full gradient-bg flex items-center justify-center">
-                    <Crown size={12} className="text-primary-foreground" />
-                  </div>
-                )}
               </div>
-              <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
-              <p className="text-sm text-muted-foreground">{member.role}</p>
-              {member.founder && (
-                <span className="inline-block mt-3 text-xs font-medium px-3 py-1 rounded-full gradient-bg text-primary-foreground">
-                  Founder
-                </span>
-              )}
+              <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">{member.name}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">{member.role}</p>
             </motion.div>
           ))}
         </div>
