@@ -87,7 +87,7 @@
 
   .glass-card-hover:hover {
     background: var(--glass-hover);
-    border-color: hsl(239 84% 67% / 0.2);
+    border-color: hsl(175 80% 46% / 0.2);
     box-shadow: var(--gradient-glow);
   }
 
