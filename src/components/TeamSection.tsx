@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Crown, Heart } from "lucide-react";
+import { Crown, Heart, Linkedin } from "lucide-react";
 
 import ibrahimImg from "@/assets/team/ibrahim.jpg";
 import bilalImg from "@/assets/team/muhammad_bilal.jfif";
@@ -14,28 +14,40 @@ import zulqarnainImg from "@/assets/team/zulqarnain_ali.jfif";
 import moaviaImg from "@/assets/team/moavia.jfif";
 import faheemImg from "@/assets/team/faheem.jfif";
 
-const founder = { name: "Muhammad Ibrahim Qasmi", role: "Founder & Lead", image: ibrahimImg };
+const founder = { name: "Muhammad Ibrahim Qasmi", role: "Founder & Lead", image: ibrahimImg, linkedin: "#" };
 
 const coreTeam = [
   // Row 1
-  { name: "Zulqarnain Ali", role: "Machine Learning Engineer & Researcher", image: zulqarnainImg },
-  { name: "Muhammad Haris Ahsan", role: "Software Engineer", image: harisImg },
-  { name: "Hassan Mehmood", role: "Agentic AI Engineer", image: hassanImg },
+  { name: "Zulqarnain Ali", role: "Machine Learning Engineer & Researcher", image: zulqarnainImg, linkedin: "#" },
+  { name: "Muhammad Haris Ahsan", role: "Software Engineer", image: harisImg, linkedin: "#" },
+  { name: "Hassan Mehmood", role: "Agentic AI Engineer", image: hassanImg, linkedin: "#" },
   // Row 2
-  { name: "Tayyab Sajjad", role: "Software Engineer & AI/ML Engineer", image: tayyabImg },
-  { name: "Muhammad Jawad", role: "Data Analyst", image: jawadImg },
-  { name: "Ahmad Fakhar", role: "Data Analyst", image: fakharImg },
+  { name: "Tayyab Sajjad", role: "Software Engineer & AI/ML Engineer", image: tayyabImg, linkedin: "#" },
+  { name: "Muhammad Jawad", role: "Data Analyst", image: jawadImg, linkedin: "#" },
+  { name: "Ahmad Fakhar", role: "Data Analyst", image: fakharImg, linkedin: "#" },
   // Row 3
-  { name: "Muhammad Bilal", role: "Research Head & Software Engineer", image: bilalImg },
-  { name: "Imama Kainat", role: "Software Engineer", image: imamaImg },
+  { name: "Muhammad Bilal", role: "Research Head & Software Engineer", image: bilalImg, linkedin: "#" },
+  { name: "Imama Kainat", role: "Software Engineer", image: imamaImg, linkedin: "#" },
 ];
 
 const volunteers = [
-  { name: "Moavia Hassan", role: "Data Scientist", image: moaviaImg },
-  { name: "Muhammad Faheem", role: "AI Engineer", image: faheemImg },
+  { name: "Moavia Hassan", role: "Data Scientist", image: moaviaImg, linkedin: "#" },
+  { name: "Muhammad Faheem", role: "AI Engineer", image: faheemImg, linkedin: "#" },
 ];
 
 const ease = [0.23, 1, 0.32, 1] as const;
+
+const LinkedInButton = ({ href }: { href: string }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-1.5 text-[11px] font-medium px-3 py-1.5 rounded-full bg-[hsl(210,80%,50%)]/10 text-[hsl(210,80%,55%)] border border-[hsl(210,80%,50%)]/20 hover:bg-[hsl(210,80%,50%)]/20 hover:border-[hsl(210,80%,50%)]/40 transition-all duration-300 mt-3"
+  >
+    <Linkedin size={11} />
+    LinkedIn
+  </a>
+);
 
 const TeamSection = () => {
   const ref = useRef(null);
@@ -96,6 +108,9 @@ const TeamSection = () => {
               <span className="inline-block text-xs font-semibold px-4 py-1.5 rounded-full gradient-bg text-primary-foreground tracking-wide uppercase">
                 Founder
               </span>
+              <div className="flex justify-center">
+                <LinkedInButton href={founder.linkedin} />
+              </div>
             </div>
           </div>
         </motion.div>
@@ -120,6 +135,9 @@ const TeamSection = () => {
               </div>
               <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">{member.name}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">{member.role}</p>
+              <div className="flex justify-center">
+                <LinkedInButton href={member.linkedin} />
+              </div>
             </motion.div>
           ))}
         </div>
@@ -166,6 +184,9 @@ const TeamSection = () => {
                 </div>
                 <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">{member.name}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{member.role}</p>
+                <div className="flex justify-center">
+                  <LinkedInButton href={member.linkedin} />
+                </div>
               </motion.div>
             ))}
           </div>

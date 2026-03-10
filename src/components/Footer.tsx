@@ -1,4 +1,5 @@
-import { Github, Linkedin, Globe } from "lucide-react";
+import { Linkedin, Globe } from "lucide-react";
+import logoImg from "@/assets/btaji_crew_logo.jfif";
 
 const Footer = () => {
   return (
@@ -6,9 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md gradient-bg flex items-center justify-center text-primary-foreground font-bold text-xs font-display">
-              B
-            </div>
+            <img src={logoImg} alt="BTAJI CREW" className="w-6 h-6 rounded-md object-cover" />
             <span className="text-sm font-semibold font-display text-foreground">BTAJI CREW</span>
           </div>
 
@@ -26,13 +25,9 @@ const Footer = () => {
               <Linkedin size={16} />
             </a>
             <a
-              href="#"
-              className="w-9 h-9 rounded-lg bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300"
-            >
-              <Github size={16} />
-            </a>
-            <a
-              href="#"
+              href="https://btaji-crew.lovable.app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-9 h-9 rounded-lg bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300"
             >
               <Globe size={16} />

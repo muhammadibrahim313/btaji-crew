@@ -90,14 +90,10 @@ const AboutSection = () => {
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/15 transition-colors duration-500">
                 <stat.icon className="w-5 h-5 text-primary" />
               </div>
-              {stat.value !== null ? (
-                <p className="text-4xl md:text-5xl font-bold mb-2 font-display">
-                  <CountUp target={stat.value} />
-                  <span className="text-primary">{stat.suffix}</span>
-                </p>
-              ) : (
-                <p className="text-lg font-bold mb-2 gradient-text font-display">{stat.label}</p>
-              )}
+              <p className="text-4xl md:text-5xl font-bold mb-2 font-display">
+                <CountUp target={stat.value} />
+                <span className="text-primary">{stat.suffix}</span>
+              </p>
               <p className="text-xs text-muted-foreground">{stat.desc}</p>
             </motion.div>
           ))}
