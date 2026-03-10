@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Linkedin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImg from "@/assets/btaji_crew_logo.jfif";
 
 const navLinks = ["Home", "About", "Team", "Community", "Contact"];
 
@@ -25,9 +26,7 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
         <a href="#home" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-primary-foreground font-bold text-sm font-display">
-            B
-          </div>
+          <img src={logoImg} alt="BTAJI CREW" className="w-8 h-8 rounded-lg object-cover" />
           <span className="text-lg font-bold tracking-tight font-display">
             <span className="text-foreground">BTAJI</span>
             <span className="text-muted-foreground font-normal ml-1">CREW</span>
@@ -47,7 +46,15 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-2">
+          <a
+            href="https://www.linkedin.com/company/btaji-crew"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-9 h-9 rounded-lg bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300"
+          >
+            <Linkedin size={16} />
+          </a>
           <Button variant="gradient" size="sm" asChild>
             <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer">
               Join Community
@@ -85,11 +92,22 @@ const Navbar = () => {
                   {link}
                 </a>
               ))}
-              <Button variant="gradient" className="w-full mt-4" asChild>
-                <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
-                  Join Community
+              <div className="flex items-center gap-2 mt-4">
+                <a
+                  href="https://www.linkedin.com/company/btaji-crew"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <Linkedin size={20} />
                 </a>
-              </Button>
+                <Button variant="gradient" className="flex-1" asChild>
+                  <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+                    Join Community
+                  </a>
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
