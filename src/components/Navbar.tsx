@@ -47,14 +47,16 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          <a
-            href="https://www.linkedin.com/company/btaji-crew"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 rounded-lg bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300"
-          >
-            <Linkedin size={16} />
-          </a>
+          <Button variant="outline" size="sm" className="gap-1.5" asChild>
+            <a
+              href="https://www.linkedin.com/company/btaji-crew"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={14} />
+              LinkedIn
+            </a>
+          </Button>
           <Button variant="gradient" size="sm" asChild>
             <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer">
               Join Community

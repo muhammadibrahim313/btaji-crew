@@ -104,7 +104,8 @@ const TeamSection = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-foreground mb-1 font-display">{founder.name}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{founder.role}</p>
+              <p className="text-sm text-muted-foreground mb-1">{founder.role}</p>
+              <p className="text-xs text-primary/80 font-medium mb-4">Pakistan's Youngest Kaggle 3× Grandmaster</p>
               <span className="inline-block text-xs font-semibold px-4 py-1.5 rounded-full gradient-bg text-primary-foreground tracking-wide uppercase">
                 Founder
               </span>
