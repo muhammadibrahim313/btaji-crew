@@ -3,10 +3,10 @@ import { useRef, useEffect, useState } from "react";
 import { Users, FolderGit2, Trophy, Heart } from "lucide-react";
 
 const stats = [
-  { icon: Users, label: "Members", value: 7, suffix: "+", desc: "Active crew members" },
-  { icon: FolderGit2, label: "Projects", value: 10, suffix: "+", desc: "Built & shipped" },
-  { icon: Trophy, label: "Kaggle Led", value: null, suffix: "", desc: "Grandmaster guided" },
-  { icon: Heart, label: "Community", value: null, suffix: "", desc: "Driven by passion" },
+  { icon: Users, label: "Crew", value: 10, suffix: "+", desc: "Active team members building AI" },
+  { icon: FolderGit2, label: "Projects", value: 15, suffix: "+", desc: "Real-world projects shipped" },
+  { icon: Trophy, label: "Competitions", value: 5, suffix: "+", desc: "Kaggle & hackathon entries" },
+  { icon: Heart, label: "Community", value: 100, suffix: "+", desc: "Members across Pakistan" },
 ];
 
 const CountUp = ({ target, duration = 1.5 }: { target: number; duration?: number }) => {
