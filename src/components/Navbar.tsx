@@ -1,14 +1,27 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Linkedin } from "lucide-react";
+import { Menu, X, Linkedin, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoImg from "@/assets/btaji_crew_logo.jfif";
+import { Link, useLocation } from "react-router-dom";
 
-const navLinks = ["Home", "About", "Team", "Community", "Contact"];
+const mainLinks = [
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Team", href: "/#team" },
+  { label: "Community", href: "/#community" },
+];
+
+const exploreLinks = [
+  { label: "Competitions", href: "/competitions" },
+  { label: "Hackathons", href: "/hackathons" },
+  { label: "Sessions", href: "/sessions" },
+  { label: "Resources", href: "/resources" },
+];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [exploreOpen, setExploreOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -25,25 +38,57 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#home" className="flex items-center gap-2 group">
-          <img src={logoImg} alt="BTAJI CREW" className="w-8 h-8 rounded-lg object-cover" />
-          <span className="text-lg font-bold tracking-tight font-display">
-            <span className="text-foreground">BTAJI</span>
-            <span className="text-muted-foreground font-normal ml-1">CREW</span>
-          </span>
-        </a>
+        <Link to="/" className="flex items-center gap-0.5 group">
+          <span className="text-2xl font-extrabold tracking-tighter font-display gradient-text">BG</span>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
+          {mainLinks.map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
+              key={link.label}
+              href={link.href}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50"
             >
-              {link}
+              {link.label}
             </a>
           ))}
+
+          {/* Explore dropdown */}
+          <div className="relative" onMouseEnter={() => setExploreOpen(true)} onMouseLeave={() => setExploreOpen(false)}>
+            <button className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50 inline-flex items-center gap-1">
+              Explore
+              <ChevronDown size={14} className={`transition-transform duration-300 ${exploreOpen ? "rotate-180" : ""}`} />
+            </button>
+            <AnimatePresence>
+              {exploreOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-0 mt-1 w-48 rounded-xl glass-card border border-border/50 p-2 shadow-xl"
+                >
+                  {exploreLinks.map((link) => (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      className="block text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 px-3 py-2.5 rounded-lg transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <a
+            href="/#contact"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50"
+          >
+            Contact
+          </a>
         </div>
 
         <div className="hidden md:flex items-center gap-2">
@@ -84,16 +129,36 @@ const Navbar = () => {
             className="md:hidden bg-background/95 backdrop-blur-2xl border-b border-border/50 overflow-hidden"
           >
             <div className="container flex flex-col gap-1 py-6">
-              {navLinks.map((link) => (
+              {mainLinks.map((link) => (
                 <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
+                  key={link.label}
+                  href={link.href}
                   className="text-lg text-muted-foreground hover:text-foreground transition-colors py-3 px-4 rounded-xl hover:bg-muted/30"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {link}
+                  {link.label}
                 </a>
               ))}
+              <div className="pl-4 py-2">
+                <span className="text-xs font-medium uppercase tracking-widest text-primary mb-2 block">Explore</span>
+                {exploreLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className="text-base text-muted-foreground hover:text-foreground transition-colors py-2.5 px-4 rounded-xl hover:bg-muted/30 block"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <a
+                href="/#contact"
+                className="text-lg text-muted-foreground hover:text-foreground transition-colors py-3 px-4 rounded-xl hover:bg-muted/30"
+                onClick={() => setMobileOpen(false)}
+              >
+                Contact
+              </a>
               <div className="flex items-center gap-2 mt-4">
                 <a
                   href="https://www.linkedin.com/company/btaji-crew"
