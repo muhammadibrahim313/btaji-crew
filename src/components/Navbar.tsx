@@ -39,7 +39,8 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-0.5 group">
-          <span className="text-2xl font-extrabold tracking-tighter font-display gradient-text">BG</span>
+          <span className="text-2xl font-extrabold tracking-tighter font-display gradient-text">BTAJI</span>
+          <span className="text-sm font-medium text-muted-foreground ml-1.5 tracking-wide">crew</span>
         </Link>
 
         {/* Desktop nav */}
