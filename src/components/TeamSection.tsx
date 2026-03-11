@@ -158,6 +158,7 @@ const TeamSection = () => {
             <h3 className="text-2xl md:text-3xl font-bold tracking-[-0.02em] font-display">
               Our <span className="gradient-text">Contributors</span>
             </h3>
+            <p className="text-sm text-muted-foreground mt-3 max-w-md mx-auto">Passionate volunteers who actively contribute to our mission and community growth.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 max-w-2xl mx-auto">
