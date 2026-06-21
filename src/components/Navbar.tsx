@@ -5,9 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 const mainLinks = [
-  { label: "Home", href: "/#home" },
   { label: "About", href: "/#about" },
   { label: "Team", href: "/#team" },
+];
+
+const tailLinks = [
   { label: "Community", href: "/#community" },
 ];
 
