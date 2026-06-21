@@ -61,12 +61,6 @@ const links = [
     href: "https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh",
     icon: MessageCircle,
   },
-  {
-    label: "Website",
-    desc: "btaji-crew.lovable.app",
-    href: "https://btaji-crew.lovable.app",
-    icon: Globe,
-  },
 ];
 
 const ResearchLab = () => (
