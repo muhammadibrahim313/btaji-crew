@@ -9,6 +9,7 @@ import Competitions from "./pages/Competitions";
 import Hackathons from "./pages/Hackathons";
 import Sessions from "./pages/Sessions";
 import Resources from "./pages/Resources";
+import ResearchLab from "./pages/ResearchLab";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/hackathons" element={<Hackathons />} />
           <Route path="/sessions" element={<Sessions />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/research-lab" element={<ResearchLab />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
