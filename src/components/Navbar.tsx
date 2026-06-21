@@ -5,9 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 const mainLinks = [
-  { label: "Home", href: "/#home" },
   { label: "About", href: "/#about" },
   { label: "Team", href: "/#team" },
+];
+
+const tailLinks = [
   { label: "Community", href: "/#community" },
 ];
 
@@ -67,6 +69,23 @@ const Navbar = () => {
             </span>
           </Link>
 
+          {tailLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50"
+            >
+              {link.label}
+            </a>
+          ))}
+
+          <a
+            href="/#contact"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50"
+          >
+            Contact
+          </a>
+
           {/* Explore dropdown */}
           <div className="relative" onMouseEnter={() => setExploreOpen(true)} onMouseLeave={() => setExploreOpen(false)}>
             <button className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50 inline-flex items-center gap-1">
@@ -80,7 +99,7 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 mt-1 w-48 rounded-xl glass-card border border-border/50 p-2 shadow-xl"
+                  className="absolute top-full right-0 mt-1 w-48 rounded-xl glass-card border border-border/50 p-2 shadow-xl"
                 >
                   {exploreLinks.map((link) => (
                     <Link
@@ -95,13 +114,6 @@ const Navbar = () => {
               )}
             </AnimatePresence>
           </div>
-
-          <a
-            href="/#contact"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50"
-          >
-            Contact
-          </a>
         </div>
 
         <div className="hidden md:flex items-center gap-2">
@@ -163,6 +175,16 @@ const Navbar = () => {
                   New
                 </span>
               </Link>
+              {tailLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-lg text-muted-foreground hover:text-foreground transition-colors py-3 px-4 rounded-xl hover:bg-muted/30"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
               <div className="pl-4 py-2">
                 <span className="text-xs font-medium uppercase tracking-widest text-primary mb-2 block">Explore</span>
                 {exploreLinks.map((link) => (

@@ -1,4 +1,4 @@
-import { Linkedin, Youtube, Instagram, Mail } from "lucide-react";
+import { Linkedin, Youtube, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -42,10 +42,6 @@ const Footer = () => {
           {/* Connect */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-4">Connect</h4>
-            <a href="mailto:btajicrew@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 mb-4">
-              <Mail size={14} />
-              btajicrew@gmail.com
-            </a>
             <div className="flex items-center gap-2">
               <a
                 href="https://www.linkedin.com/company/btaji-crew"
@@ -80,18 +76,10 @@ const Footer = () => {
 
         <div className="section-divider mt-10 mb-6" />
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex items-center justify-center">
           <p className="text-xs text-muted-foreground">
             © 2026 BTAJI CREW. All rights reserved.
           </p>
-          <a
-            href="https://btag-crew.lovable.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-          >
-            btag-crew.lovable.app
-          </a>
         </div>
       </div>
     </footer>

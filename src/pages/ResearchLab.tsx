@@ -7,7 +7,6 @@ import {
   Users,
   MessageCircle,
   Youtube,
-  Globe,
   BookOpen,
   Sparkles,
 } from "lucide-react";
@@ -60,12 +59,6 @@ const links = [
     desc: "Join the conversation",
     href: "https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh",
     icon: MessageCircle,
-  },
-  {
-    label: "Website",
-    desc: "btaji-crew.lovable.app",
-    href: "https://btaji-crew.lovable.app",
-    icon: Globe,
   },
 ];
 
