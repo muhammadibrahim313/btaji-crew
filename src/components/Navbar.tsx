@@ -175,6 +175,23 @@ const Navbar = () => {
                   New
                 </span>
               </Link>
+              {tailLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-lg text-muted-foreground hover:text-foreground transition-colors py-3 px-4 rounded-xl hover:bg-muted/30"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="/#contact"
+                className="text-lg text-muted-foreground hover:text-foreground transition-colors py-3 px-4 rounded-xl hover:bg-muted/30"
+                onClick={() => setMobileOpen(false)}
+              >
+                Contact
+              </a>
               <div className="pl-4 py-2">
                 <span className="text-xs font-medium uppercase tracking-widest text-primary mb-2 block">Explore</span>
                 {exploreLinks.map((link) => (
