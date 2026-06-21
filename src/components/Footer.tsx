@@ -1,4 +1,4 @@
-import { Linkedin, Youtube, Instagram, Mail } from "lucide-react";
+import { Linkedin, Youtube, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -42,10 +42,6 @@ const Footer = () => {
           {/* Connect */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-4">Connect</h4>
-            <a href="mailto:btajicrew@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 mb-4">
-              <Mail size={14} />
-              btajicrew@gmail.com
-            </a>
             <div className="flex items-center gap-2">
               <a
                 href="https://www.linkedin.com/company/btaji-crew"
