@@ -7,7 +7,6 @@ import {
   Users,
   MessageCircle,
   Youtube,
-  Globe,
   BookOpen,
   Sparkles,
 } from "lucide-react";
