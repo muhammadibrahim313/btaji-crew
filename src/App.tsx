@@ -10,6 +10,9 @@ import Hackathons from "./pages/Hackathons";
 import Sessions from "./pages/Sessions";
 import Resources from "./pages/Resources";
 import ResearchLab from "./pages/ResearchLab";
+import StormCost from "./pages/StormCost";
+import StormCostCertificate from "./pages/StormCostCertificate";
+import RouteScroll from "./components/RouteScroll";
 
 const queryClient = new QueryClient();
 
@@ -19,9 +22,15 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <RouteScroll />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/competitions" element={<Competitions />} />
+          <Route path="/competitions/storm-cost" element={<StormCost />} />
+          <Route
+            path="/competitions/storm-cost/certificates/:participantId"
+            element={<StormCostCertificate />}
+          />
           <Route path="/hackathons" element={<Hackathons />} />
           <Route path="/sessions" element={<Sessions />} />
           <Route path="/resources" element={<Resources />} />
