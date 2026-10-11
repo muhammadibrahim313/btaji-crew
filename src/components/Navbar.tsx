@@ -27,7 +27,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -35,7 +36,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-background/60 backdrop-blur-2xl border-b border-border/50"
+          ? "bg-background/95 backdrop-blur-2xl border-b border-border/50"
           : "bg-transparent"
       }`}
     >
@@ -136,6 +137,8 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
+          aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={mobileOpen}
           className="md:hidden text-foreground p-2 rounded-lg hover:bg-muted/50 transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
