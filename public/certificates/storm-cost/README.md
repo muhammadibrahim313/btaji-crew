@@ -1,17 +1,66 @@
-# StormCost participant PDFs
+# Publishing StormCost certificates
 
-Add approved PDFs here. Participants are mapped in `src/data/stormCost.ts`.
-Each `certificateFile` defaults to the Kaggle username plus `.pdf`.
-Use that filename, or edit `certificateFile` for a differently named PDF.
+Each participant has a permanent certificate page and, once issued, an individual PDF. A team shares its leaderboard rank and score; its members do not share a certificate file.
 
-Examples: `marionicolae.pdf` (rank 1), `ayeshasal89.pdf` and
-`abdulwahab740.pdf` (the two members of SuperHumans, rank 8).
+Participant identities and filenames are maintained in [`src/data/stormCost.ts`](../../../src/data/stormCost.ts).
 
-Permanent participant pages: `/competitions/storm-cost/certificates/<username>`.
-Each team member has a different PDF, retaining their shared team rank and score.
-Names currently match Kaggle display names; confirm final certificate names with
-the organizer before producing documents.
+## 1. Confirm the participant
 
-Restart/rebuild after adding PDFs: availability is detected at build time.
-Until a PDF exists, its page says “Certificate coming soon” with no broken download.
-Only add approved files: this directory becomes publicly accessible on deployment.
+Match the certificate recipient to their Kaggle username and final team rank. Confirm the name they want printed using their submitted certificate details; do not assume a display name is their full name.
+
+The `username` identifies the participant's page. Keep it unchanged when correcting a name or replacing a PDF so existing credential links continue to work.
+
+## 2. Add the approved PDF
+
+Save the final PDF in this directory. By default, `certificateFile` is the participant's Kaggle username followed by `.pdf`.
+
+| Participant | Team rank | Default filename |
+| --- | --- | --- |
+| Mario Nicolae | 1 | `marionicolae.pdf` |
+| Ayesha Saleem | 8 | `ayeshasal89.pdf` |
+| Abdul Wahab | 8 | `abdulwahab740.pdf` |
+
+For a PDF named after a participant, override `certificateFile` on that member's entry in the data file. For example:
+
+```ts
+{
+  ...participant("Ayesha Saleem", "ayeshasal89"),
+  certificateFile: "ayesha-saleem.pdf",
+}
+```
+
+Use an exact, case-sensitive filename with the lowercase `.pdf` extension. Keep PDFs directly in this directory; the current file lookup does not scan subdirectories.
+
+Only add approved certificates. Files in `public/` become publicly accessible after deployment. Do not include recipient emails, draft certificates, or private production notes.
+
+## 3. Preview and verify
+
+Restart the development server after adding files, then open the participant's page:
+
+```text
+http://127.0.0.1:8080/competitions/storm-cost/certificates/ayeshasal89
+```
+
+Check that:
+
+- The recipient, team, rank, and score match the approved details.
+- The page shows **Your certificate is ready**.
+- **Open certificate** displays the correct PDF in a new tab.
+- **Download PDF** saves the same document.
+- For a multi-member team, each person's link opens their own certificate.
+
+When the mapped PDF is absent, the page shows **Certificate coming soon** and does not provide a broken download link. Do not use sample awards as substitutes for pending certificates.
+
+Run `npm run build` before publishing. PDF availability is detected at build time, so deploy the new build and public files together.
+
+## 4. Share the permanent link
+
+Share the participant page as the credential link:
+
+```text
+https://btaji-crew.ibrahimqasmi.com/competitions/storm-cost/certificates/ayeshasal89
+```
+
+The PDF itself is available at `/certificates/storm-cost/<filename>.pdf`. Sharing the participant page lets the PDF filename change later without changing the recipient's credential link.
+
+These are public pages served by the website; they do not currently provide a separate certificate-signature or identity-verification service.
