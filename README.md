@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+<div align="center">
 
-## Project info
+<img src="src/assets/btaji_crew_logo.jfif" alt="BTAJI Crew logo" width="88" height="88">
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+# BTAJI Crew
 
-## How can I edit this code?
+**Learn together. Build with purpose. Grow through community.**
 
-There are several ways of editing your application.
+The home of BTAJI Crew — a community of data scientists, machine learning engineers, researchers, and AI enthusiasts from Pakistan and beyond.
 
-**Use Lovable**
+[Visit the website](https://btaji-crew.ibrahimqasmi.com/) · [Competitions](https://btaji-crew.ibrahimqasmi.com/competitions) · [Research Lab](https://github.com/muhammadibrahim313/btaji-crew-research-lab) · [Join the community](https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+</div>
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## About the project
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+This repository powers the BTAJI Crew website: a place to meet the people behind the community, explore our research and competition activities, and celebrate the work of our participants.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+We bring learning into practice through Kaggle competitions, collaborative projects, research sessions, and knowledge sharing. Whether you are starting your first machine learning project or preparing your first research paper, there is room to learn and contribute.
 
-Follow these steps:
+## Explore the website
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+| Area | What you will find |
+| --- | --- |
+| **Community & team** | Meet our founder, core team, and volunteers, and find ways to connect. |
+| **Competitions** | Browse community competitions and their results, starting with StormCost. |
+| **StormCost leaderboard** | Final private standings, search by team or participant, and an individual certificate page for every participant. |
+| **Participant certificates** | Permanent participant links with PDF viewing and downloads once approved certificates are published. |
+| **Research Lab** | An introduction to our free research series, with links to recordings and learning materials. |
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Dedicated Hackathons, Sessions, and Resources pages are currently marked **Coming Soon**.
 
-# Step 3: Install the necessary dependencies.
-npm i
+### StormCost
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+[StormCost](https://www.kaggle.com/competitions/storm-cost) challenged participants to predict property damage from severe-weather narratives. The website records the final private leaderboard for **35 teams and 42 participants**.
+
+Team members share a leaderboard rank, while each person has their own certificate page. Certificate pages display a pending message until an approved PDF is available.
+
+[Explore the results](https://btaji-crew.ibrahimqasmi.com/competitions/storm-cost) · [Certificate publishing guide](public/certificates/storm-cost/README.md)
+
+## People behind the community
+
+<table>
+  <tr>
+    <td align="center" width="300">
+      <img src="src/assets/team/ibrahim.jpg" alt="Muhammad Ibrahim Qasmi" width="120" height="120"><br>
+      <strong>Muhammad Ibrahim Qasmi</strong><br>
+      <sub>Founder &amp; Lead · ML Researcher</sub><br><br>
+      <a href="https://github.com/muhammadibrahim313">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/ibrahimqasmi313/">LinkedIn</a> ·
+      <a href="https://www.kaggle.com/ibrahimqasimi">Kaggle</a>
+    </td>
+    <td align="center" width="300">
+      <img src="src/assets/team/zulqarnain_ali.jfif" alt="Zulqarnain Ali" width="120" height="120"><br>
+      <strong>Zulqarnain Ali</strong><br>
+      <sub>ML Engineer · Researcher &amp; Mentor</sub><br><br>
+      <a href="https://www.linkedin.com/in/zulqarnainalipk/">LinkedIn</a> ·
+      <a href="https://www.kaggle.com/johndoe2011">Kaggle</a>
+    </td>
+  </tr>
+</table>
+
+BTAJI Crew is made possible by our wider team and volunteers. [Meet the whole crew](https://btaji-crew.ibrahimqasmi.com/#team).
+
+## Run locally
+
+Install Node.js and npm, then:
+
+```bash
+git clone https://github.com/muhammadibrahim313/btaji-crew.git
+cd btaji-crew
+npm ci
+npm run dev -- --host 127.0.0.1
 ```
 
-**Edit a file directly in GitHub**
+Open [http://127.0.0.1:8080](http://127.0.0.1:8080). No API keys or database setup are required for the current website.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**Built with:** React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui, and Framer Motion. React Router handles page navigation; Vitest supports automated tests.
 
-**Use GitHub Codespaces**
+For project structure, checks, deployment, and contribution guidance, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Get involved
 
-## What technologies are used for this project?
+Have an idea, spotted an incorrect link, or want to improve the site? [Open an issue](https://github.com/muhammadibrahim313/btaji-crew/issues) or contribute a focused pull request. Please include the source when proposing changes to names, rankings, or competition results.
 
-This project is built with:
+- [WhatsApp community](https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh) — connect, ask questions, and learn together.
+- [LinkedIn](https://www.linkedin.com/company/btaji-crew) — follow community updates.
+- [YouTube](https://www.youtube.com/@Btajicrew) — watch recorded sessions.
+- [Research Lab repository](https://github.com/muhammadibrahim313/btaji-crew-research-lab) — explore session notes, slides, and exercises.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+<div align="center">
+Made with care by the <strong>BTAJI Crew community</strong>.
+</div>
