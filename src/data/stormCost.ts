@@ -20,6 +20,8 @@ export const stormCost = {
     "Predict property damage in dollars from severe-weather incident narratives.",
 };
 // Final PRIVATE leaderboard, read on 2026-10-11. Preserve source order and precision.
+// Member names match the approved certificate PDFs supplied on 2026-10-13.
+// Kaggle team names, usernames, ranks, and scores remain unchanged.
 // username is the permanent certificate-page ID. PDF filenames may be changed here.
 const participant = (name: string, username: string): Participant => ({
   name,
@@ -39,14 +41,14 @@ export const stormCostTeams: StormCostTeam[] = [
     name: "Viet",
     score: "47.10278",
     entries: 11,
-    members: [participant("Viet", "vietnguyen1004")],
+    members: [participant("Quoc Viet Nguyen", "vietnguyen1004")],
   },
   {
     rank: 3,
     name: "ZAOUI_Yassine",
     score: "47.01269",
     entries: 64,
-    members: [participant("ZAOUI_Yassine", "zaouiyassine")],
+    members: [participant("Yassine ZAOUI", "zaouiyassine")],
   },
   {
     rank: 4,
@@ -83,7 +85,7 @@ export const stormCostTeams: StormCostTeam[] = [
     entries: 29,
     members: [
       participant("Ayesha Saleem", "ayeshasal89"),
-      participant("Abdulwahab", "abdulwahab740"),
+      participant("Abdul Wahab", "abdulwahab740"),
     ],
   },
   {
@@ -92,7 +94,7 @@ export const stormCostTeams: StormCostTeam[] = [
     score: "45.70680",
     entries: 45,
     members: [
-      participant("JaswirR", "jaswirr"),
+      participant("Jaswir Raghoe", "jaswirr"),
       participant("Moizza Batool Khan", "moizzabatoolkhan"),
     ],
   },
@@ -115,7 +117,7 @@ export const stormCostTeams: StormCostTeam[] = [
     name: "Dan13iel",
     score: "44.44398",
     entries: 92,
-    members: [participant("Dan13iel", "dan13iel")],
+    members: [participant("Daniel", "dan13iel")],
   },
   {
     rank: 13,
@@ -137,7 +139,7 @@ export const stormCostTeams: StormCostTeam[] = [
     score: "42.35429",
     entries: 7,
     members: [
-      participant("hamnahfkhan", "hamnahfkhan"),
+      participant("Hamnah Fatima Khan", "hamnahfkhan"),
       participant("Mehak Gul", "mehakgul06"),
     ],
   },
@@ -174,7 +176,7 @@ export const stormCostTeams: StormCostTeam[] = [
     name: "Noor_ul_Ain Zahid Official",
     score: "41.47750",
     entries: 3,
-    members: [participant("Noor_ul_Ain Zahid Official", "noorulainzahid")],
+    members: [participant("Noor ul Ain Zahid", "noorulainzahid")],
   },
   {
     rank: 21,
@@ -243,14 +245,14 @@ export const stormCostTeams: StormCostTeam[] = [
     name: "Julien bertas",
     score: "35.26582",
     entries: 20,
-    members: [participant("Julien bertas", "julienbertas")],
+    members: [participant("Julien Bertas", "julienbertas")],
   },
   {
     rank: 30,
     name: "JinchengZhang1",
     score: "35.22446",
     entries: 2,
-    members: [participant("JinchengZhang1", "jinchengzhang1")],
+    members: [participant("Jincheng Zhang", "jinchengzhang1")],
   },
   {
     rank: 31,
@@ -265,7 +267,7 @@ export const stormCostTeams: StormCostTeam[] = [
     score: "34.56564",
     entries: 1,
     members: [
-      participant("aleena_k", "aleenakhalid223"),
+      participant("Aleena Khalid", "aleenakhalid223"),
       participant("Muhammad Abdullah", "abdullahshafqat27"),
     ],
   },

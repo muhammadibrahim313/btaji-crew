@@ -25,7 +25,7 @@ describe("StormCost final standings and participant certificates", () => {
     expect(team.score).toBe("45.81021");
     expect(team.members.map((member) => member.name)).toEqual([
       "Ayesha Saleem",
-      "Abdulwahab",
+      "Abdul Wahab",
     ]);
     expect(filterTeams("SuperHumans")).toEqual([team]);
     expect(filterTeams("Ayesha Saleem")).toEqual([team]);
@@ -40,5 +40,18 @@ describe("StormCost final standings and participant certificates", () => {
         certificateFile: "missing-test-file.pdf",
       }),
     ).toBeNull();
+  });
+  it("provides a separate published PDF for all 42 certificate recipients", () => {
+    const members = stormCostTeams.flatMap((team) => team.members);
+    const urls = members.map(certificateUrl);
+    expect(urls.every((url) => url !== null)).toBe(true);
+    expect(new Set(urls).size).toBe(42);
+    expect(filterTeams("Quoc Viet Nguyen")[0].rank).toBe(2);
+    expect(filterTeams("Yassine ZAOUI")[0].rank).toBe(3);
+    const [team] = filterTeams("SuperHumans");
+    expect(team.members.map(certificateUrl)).toEqual([
+      "/certificates/storm-cost/ayeshasal89.pdf",
+      "/certificates/storm-cost/abdulwahab740.pdf",
+    ]);
   });
 });

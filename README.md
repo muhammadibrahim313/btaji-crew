@@ -27,7 +27,7 @@ We bring learning into practice through Kaggle competitions, collaborative proje
 | **Community & team** | Meet our founder, core team, and volunteers, and find ways to connect. |
 | **Competitions** | Browse community competitions and their results, starting with StormCost. |
 | **StormCost leaderboard** | Final private standings, search by team or participant, and an individual certificate page for every participant. |
-| **Participant certificates** | Permanent participant links with PDF viewing and downloads once approved certificates are published. |
+| **Participant certificates** | Permanent participant links to view and download issued PDF certificates. |
 | **Research Lab** | An introduction to our free research series, with links to recordings and learning materials. |
 
 Dedicated Hackathons, Sessions, and Resources pages are currently marked **Coming Soon**.
@@ -36,7 +36,7 @@ Dedicated Hackathons, Sessions, and Resources pages are currently marked **Comin
 
 [StormCost](https://www.kaggle.com/competitions/storm-cost) challenged participants to predict property damage from severe-weather narratives. The website records the final private leaderboard for **35 teams and 42 participants**.
 
-Team members share a leaderboard rank, while each person has their own certificate page. Certificate pages display a pending message until an approved PDF is available.
+Team members share a leaderboard rank, while each person has their own certificate page. All 42 certificates are available: three achievement certificates for the top three winners and 39 participation certificates.
 
 [Explore the results](https://btaji-crew.ibrahimqasmi.com/competitions/storm-cost) · [Certificate publishing guide](public/certificates/storm-cost/README.md)
 

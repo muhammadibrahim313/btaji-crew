@@ -41,7 +41,9 @@ export default function StormCostCertificate() {
                 {member.name}
               </h1>
               <p className="text-muted-foreground mt-4">
-                Participant certificate
+                {team.rank <= 3
+                  ? `Achievement certificate · ${["1st", "2nd", "3rd"][team.rank - 1]} place`
+                  : "Participation certificate"}
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-card overflow-hidden">
@@ -87,7 +89,7 @@ export default function StormCostCertificate() {
                         </a>
                       </Button>
                       <Button variant="outline" asChild>
-                        <a href={pdf} download>
+                        <a href={pdf} download={`${member.name} - StormCost.pdf`}>
                           Download PDF <Download size={16} />
                         </a>
                       </Button>

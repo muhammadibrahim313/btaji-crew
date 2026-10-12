@@ -195,7 +195,7 @@ export default function StormCost() {
                 A certificate for each participant.
               </span>{" "}
               Team members share a rank, but each has a separate certificate
-              page. PDFs will appear here once issued.
+              page. Open your certificate to view or download the official PDF.
             </p>
           </div>
           <p role="status" className="text-xs text-muted-foreground mb-3">
@@ -307,8 +307,8 @@ export default function StormCost() {
             >
               Kaggle final private leaderboard
             </a>{" "}
-            · Recorded {stormCost.sourceDate}. Names are shown as listed on
-            Kaggle.
+            · Recorded {stormCost.sourceDate}. Team names match Kaggle;
+            participant names match their issued certificates.
           </p>
         </section>
       </main>
