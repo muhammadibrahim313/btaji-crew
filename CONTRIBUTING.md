@@ -4,7 +4,7 @@ Thanks for helping improve the community website. Useful contributions include c
 
 ## Set up your checkout
 
-Use the commands in the [README](README.md#run-locally) to clone the repository, install dependencies with `npm ci`, and start Vite. This project includes an npm lockfile; keep it consistent with `package.json` when changing dependencies.
+Clone the repository, install dependencies with `npm ci`, and start Vite with `npm run dev`. This project includes an npm lockfile; keep it consistent with `package.json` when changing dependencies.
 
 Create a branch for your change:
 

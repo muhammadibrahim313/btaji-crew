@@ -64,26 +64,11 @@ Team members share a leaderboard rank, while each person has their own certifica
 
 BTAJI Crew is made possible by our wider team and volunteers. [Meet the whole crew](https://btaji-crew.ibrahimqasmi.com/#team).
 
-## Run locally
-
-Install Node.js and npm, then:
-
-```bash
-git clone https://github.com/muhammadibrahim313/btaji-crew.git
-cd btaji-crew
-npm ci
-npm run dev -- --host 127.0.0.1
-```
-
-Open [http://127.0.0.1:8080](http://127.0.0.1:8080). No API keys or database setup are required for the current website.
-
-**Built with:** React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui, and Framer Motion. React Router handles page navigation; Vitest supports automated tests.
-
-For project structure, checks, deployment, and contribution guidance, see [CONTRIBUTING.md](CONTRIBUTING.md).
-
 ## Get involved
 
 Have an idea, spotted an incorrect link, or want to improve the site? [Open an issue](https://github.com/muhammadibrahim313/btaji-crew/issues) or contribute a focused pull request. Please include the source when proposing changes to names, rankings, or competition results.
+
+For contribution guidance, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 - [WhatsApp community](https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh) — connect, ask questions, and learn together.
 - [LinkedIn](https://www.linkedin.com/company/btaji-crew) — follow community updates.
