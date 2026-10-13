@@ -5,6 +5,7 @@ import TeamSection from "@/components/TeamSection";
 import CommunitySection from "@/components/CommunitySection";
 import ResearchLabSection from "@/components/ResearchLabSection";
 import CTASection from "@/components/CTASection";
+import AlumniSection from "@/components/AlumniSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
       <TeamSection />
       <CommunitySection />
       <CTASection />
+      <AlumniSection />
       <Footer />
     </div>
   );

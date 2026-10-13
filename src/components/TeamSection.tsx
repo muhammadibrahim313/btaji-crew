@@ -1,38 +1,20 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Crown, Heart, Linkedin } from "lucide-react";
+import { Crown, Linkedin } from "lucide-react";
 
 import ibrahimImg from "@/assets/team/ibrahim.jpg";
-import bilalImg from "@/assets/team/muhammad_bilal.jfif";
-import tayyabImg from "@/assets/team/tayyab.jfif";
-import jawadImg from "@/assets/team/muhammad_jawad.jfif";
-import fakharImg from "@/assets/team/ahmad_fakhar.jfif";
 import imamaImg from "@/assets/team/imama_kainat.jfif";
-import hassanImg from "@/assets/team/hassan_mehmood.png";
 import harisImg from "@/assets/team/muhammad_haris.jfif";
 import zulqarnainImg from "@/assets/team/zulqarnain_ali.jfif";
-import moaviaImg from "@/assets/team/moavia.jfif";
 import faheemImg from "@/assets/team/faheem.jfif";
 
-const founder = { name: "Muhammad Ibrahim Qasmi", role: "Founder & Lead", image: ibrahimImg, linkedin: "#" };
+const founder = { name: "Muhammad Ibrahim Qasmi", role: "Founder & Lead", image: ibrahimImg, linkedin: "https://www.linkedin.com/in/ibrahimqasmi313/" };
 
 const coreTeam = [
-  // Row 1
-  { name: "Zulqarnain Ali", role: "Machine Learning Engineer & Researcher", image: zulqarnainImg, linkedin: "#" },
-  { name: "Muhammad Haris Ahsan", role: "Software Engineer", image: harisImg, linkedin: "#" },
-  { name: "Hassan Mehmood", role: "Agentic AI Engineer", image: hassanImg, linkedin: "#" },
-  // Row 2
-  { name: "Tayyab Sajjad", role: "Software Engineer & AI/ML Engineer", image: tayyabImg, linkedin: "#" },
-  { name: "Muhammad Jawad", role: "Data Analyst", image: jawadImg, linkedin: "#" },
-  { name: "Ahmad Fakhar", role: "Data Analyst", image: fakharImg, linkedin: "#" },
-  // Row 3
-  { name: "Muhammad Bilal", role: "Research Head & Software Engineer", image: bilalImg, linkedin: "#" },
-  { name: "Imama Kainat", role: "Software Engineer", image: imamaImg, linkedin: "#" },
-];
-
-const volunteers = [
-  { name: "Moavia Hassan", role: "Data Scientist", image: moaviaImg, linkedin: "#" },
-  { name: "Muhammad Faheem", role: "AI Engineer", image: faheemImg, linkedin: "#" },
+  { name: "Zulqarnain Ali", role: "Machine Learning Engineer & Researcher", image: zulqarnainImg, linkedin: "https://www.linkedin.com/in/zulqarnainalipk/" },
+  { name: "Muhammad Haris Ahsan", role: "Software Engineer", image: harisImg },
+  { name: "Imama Kainat", role: "Software Engineer", image: imamaImg },
+  { name: "Muhammad Faheem", role: "Community Admin & AI Engineer", image: faheemImg },
 ];
 
 const ease = [0.23, 1, 0.32, 1] as const;
@@ -117,7 +99,7 @@ const TeamSection = () => {
         </motion.div>
 
         {/* Core team */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 max-w-3xl mx-auto">
           {coreTeam.map((member, i) => (
             <motion.div
               key={member.name}
@@ -137,59 +119,13 @@ const TeamSection = () => {
               <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">{member.name}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">{member.role}</p>
               <div className="flex justify-center">
-                <LinkedInButton href={member.linkedin} />
+                {member.linkedin && <LinkedInButton href={member.linkedin} />}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Volunteers section */}
-        <motion.div
-          className="mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.9, ease }}
-        >
-          <div className="text-center mb-10">
-            <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-primary mb-4 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5">
-              <Heart size={12} className="fill-primary" />
-              Star Volunteers
-            </span>
-            <p className="text-sm text-muted-foreground mt-3 max-w-md mx-auto">Passionate volunteers who actively contribute to our mission and community growth.</p>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 max-w-2xl mx-auto">
-            {volunteers.map((member, i) => (
-              <motion.div
-                key={member.name}
-                className="glass-card glass-card-hover rounded-2xl p-6 text-center group relative overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 1.0 + i * 0.1, ease }}
-              >
-                <div className="absolute top-2 right-2">
-                  <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
-                    <Heart size={8} className="fill-primary" />
-                    Volunteer
-                  </span>
-                </div>
-                <div className="relative mx-auto mb-4 w-20 h-20">
-                  <div className="absolute -inset-0.5 rounded-full bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="relative w-20 h-20 rounded-full object-cover ring-1 ring-border group-hover:ring-primary/30 transition-all duration-500"
-                  />
-                </div>
-                <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">{member.name}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{member.role}</p>
-                <div className="flex justify-center">
-                  <LinkedInButton href={member.linkedin} />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
