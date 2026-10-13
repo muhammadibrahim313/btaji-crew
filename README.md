@@ -62,7 +62,7 @@ Team members share a leaderboard rank, while each person has their own certifica
   </tr>
 </table>
 
-BTAJI Crew is made possible by our wider team and volunteers. [Meet the whole crew](https://btaji-crew.ibrahimqasmi.com/#team).
+BTAJI Crew is made possible by our active team and the contributions of our alumni. [Meet the whole crew](https://btaji-crew.ibrahimqasmi.com/#team).
 
 ## Get involved
 
@@ -73,6 +73,8 @@ For contribution guidance, see [CONTRIBUTING.md](CONTRIBUTING.md).
 - [WhatsApp community](https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh) — connect, ask questions, and learn together.
 - [LinkedIn](https://www.linkedin.com/company/btaji-crew) — follow community updates.
 - [YouTube](https://www.youtube.com/@Btajicrew) — watch recorded sessions.
+- [Facebook](https://web.facebook.com/people/Btaji-Crew/pfbid0mG46LWL6bmjqgnRDXLDzSwR1eLYSozQtg9cCjSWPYvP6SmmVo6EqG2Q4oSLR2fLKl/) — follow BTAJI Crew.
+- [Instagram](https://www.instagram.com/btajicrew/) — follow BTAJI Crew.
 - [Research Lab repository](https://github.com/muhammadibrahim313/btaji-crew-research-lab) — explore session notes, slides, and exercises.
 
 ---

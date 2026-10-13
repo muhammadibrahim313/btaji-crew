@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { socialLinks } from "@/data/socialLinks";
 import { ArrowRight } from "lucide-react";
 
 const ease = [0.23, 1, 0.32, 1] as const;
@@ -57,6 +58,11 @@ const CTASection = () => {
               </a>
             </Button>
           </motion.div>
+          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3">
+            {socialLinks.filter((social) => social.name !== "LinkedIn").map((social) => (
+              <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">{social.name}</a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
