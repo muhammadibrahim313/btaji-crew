@@ -2,28 +2,32 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Linkedin, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const mainLinks = [
   { label: "About", href: "/#about" },
-  { label: "Team", href: "/#team" },
-];
-
-const tailLinks = [
+  { label: "Research Lab", href: "/research-lab" },
+  { label: "Competitions", href: "/competitions" },
   { label: "Community", href: "/#community" },
+  { label: "Hackathons", href: "/hackathons" },
+  { label: "Sessions", href: "/sessions" },
 ];
 
 const exploreLinks = [
-  { label: "Competitions", href: "/competitions" },
-  { label: "Hackathons", href: "/hackathons" },
-  { label: "Sessions", href: "/sessions" },
+  { label: "Team", href: "/#team" },
   { label: "Resources", href: "/resources" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [exploreOpen, setExploreOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -47,72 +51,34 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden xl:flex items-center gap-1">
           {mainLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50"
+              to={link.href}
+              className="text-sm whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors duration-300 px-3 py-2 rounded-full hover:bg-muted/50"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-
-          <Link
-            to="/research-lab"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50"
-          >
-            Research Lab
-          </Link>
-
-          {tailLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50"
-            >
-              {link.label}
-            </a>
-          ))}
-
-          <a
-            href="/#contact"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50"
-          >
-            Contact
-          </a>
-
-          {/* Explore dropdown */}
-          <div className="relative" onMouseEnter={() => setExploreOpen(true)} onMouseLeave={() => setExploreOpen(false)}>
-            <button className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50 inline-flex items-center gap-1">
-              Explore
-              <ChevronDown size={14} className={`transition-transform duration-300 ${exploreOpen ? "rotate-180" : ""}`} />
-            </button>
-            <AnimatePresence>
-              {exploreOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute top-full right-0 mt-1 w-48 rounded-xl glass-card border border-border/50 p-2 shadow-xl"
-                >
-                  {exploreLinks.map((link) => (
-                    <Link
-                      key={link.label}
-                      to={link.href}
-                      className="block text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 px-3 py-2.5 rounded-lg transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="group text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-3 py-2 rounded-full hover:bg-muted/50 inline-flex items-center gap-1">
+                Explore
+                <ChevronDown size={14} className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-48 rounded-xl p-2">
+              {exploreLinks.map((link) => (
+                <DropdownMenuItem key={link.label} asChild className="rounded-lg px-3 py-2.5">
+                  <Link to={link.href}>{link.label}</Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden xl:flex items-center gap-2">
           <Button variant="outline" size="sm" className="gap-1.5" asChild>
             <a
               href="https://www.linkedin.com/company/btaji-crew"
@@ -134,7 +100,7 @@ const Navbar = () => {
         <button
           aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={mobileOpen}
-          className="md:hidden text-foreground p-2 rounded-lg hover:bg-muted/50 transition-colors"
+          className="xl:hidden text-foreground p-2 rounded-lg hover:bg-muted/50 transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -149,35 +115,18 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-            className="md:hidden bg-background/95 backdrop-blur-2xl border-b border-border/50 overflow-hidden"
+            className="xl:hidden bg-background border-b border-border/50 max-h-[calc(100dvh-4rem)] md:max-h-[calc(100dvh-5rem)] overflow-y-auto"
           >
             <div className="container flex flex-col gap-1 py-6">
               {mainLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-lg text-muted-foreground hover:text-foreground transition-colors py-3 px-4 rounded-xl hover:bg-muted/30"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
-                </a>
-              ))}
-              <Link
-                to="/research-lab"
-                className="text-lg text-muted-foreground hover:text-foreground transition-colors py-3 px-4 rounded-xl hover:bg-muted/30"
-                onClick={() => setMobileOpen(false)}
-              >
-                Research Lab
-              </Link>
-              {tailLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-lg text-muted-foreground hover:text-foreground transition-colors py-3 px-4 rounded-xl hover:bg-muted/30"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </a>
+                </Link>
               ))}
               <div className="pl-4 py-2">
                 <span className="text-xs font-medium uppercase tracking-widest text-primary mb-2 block">Explore</span>
@@ -192,13 +141,6 @@ const Navbar = () => {
                   </Link>
                 ))}
               </div>
-              <a
-                href="/#contact"
-                className="text-lg text-muted-foreground hover:text-foreground transition-colors py-3 px-4 rounded-xl hover:bg-muted/30"
-                onClick={() => setMobileOpen(false)}
-              >
-                Contact
-              </a>
               <div className="flex items-center gap-2 mt-4">
                 <a
                   href="https://www.linkedin.com/company/btaji-crew"
