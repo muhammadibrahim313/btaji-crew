@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import {
   FlaskConical,
   Github,
-  Play,
-  FileText,
   Users,
   MessageCircle,
   Youtube,
@@ -13,22 +11,10 @@ import {
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ResearchSessionList from "@/components/ResearchSessionList";
+import { mainSessionCount, researchPlaylist } from "@/data/researchLab";
 
 const ease = [0.23, 1, 0.32, 1] as const;
-
-const sessions = [
-  {
-    num: "01",
-    title: "How to Write Your First Research Paper",
-    date: "21 Jun 2026",
-    video: "https://youtu.be/IMJx7ECaIEk",
-    slides:
-      "https://github.com/muhammadibrahim313/btaji-crew-research-lab/blob/main/sessions/01-first-research-paper/slides.pdf",
-    notes:
-      "https://github.com/muhammadibrahim313/btaji-crew-research-lab/tree/main/sessions/01-first-research-paper",
-    status: "Live",
-  },
-];
 
 const hosts = [
   {
@@ -115,7 +101,7 @@ const ResearchLab = () => (
 
           {/* Badges */}
           <div className="flex flex-wrap justify-center gap-2 mt-10">
-            {["Sessions: 1", "Language: Urdu", "For beginners", "Slides free to use"].map((b) => (
+            {[`${mainSessionCount} main sessions + LaTeX bonus`, "Language: Urdu", "For beginners", "Slides free to use"].map((b) => (
               <span
                 key={b}
                 className="text-xs px-3 py-1.5 rounded-full bg-muted/40 border border-border/50 text-muted-foreground"
@@ -152,7 +138,7 @@ const ResearchLab = () => (
     </section>
 
     {/* Sessions */}
-    <section className="py-16 md:py-20 relative">
+    <section id="sessions" className="py-16 md:py-20 relative scroll-mt-24">
       <div className="container max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -170,57 +156,15 @@ const ResearchLab = () => (
             </div>
           </div>
 
+          <p className="text-muted-foreground mb-6 leading-relaxed">
+            Follow the six main sessions in order, with a bonus LaTeX workshop after Session 4.
+            Each recording includes slides, notes, and a practical task.
+          </p>
+          <Button variant="outline" className="mb-8" asChild>
+            <a href={researchPlaylist} target="_blank" rel="noopener noreferrer">Watch the full playlist</a>
+          </Button>
           <div className="space-y-4">
-            {sessions.map((s, i) => (
-              <motion.div
-                key={s.num}
-                className="glass-card glass-card-hover rounded-2xl p-6 md:p-7"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 * i, ease }}
-              >
-                <div className="flex flex-col md:flex-row md:items-center gap-5">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center text-white font-bold shrink-0">
-                      {s.num}
-                    </div>
-                    <div className="md:hidden">
-                      <h4 className="font-semibold text-foreground leading-tight">{s.title}</h4>
-                      <p className="text-xs text-muted-foreground mt-1">{s.date}</p>
-                    </div>
-                  </div>
-                  <div className="hidden md:block flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                        {s.status}
-                      </span>
-                      <span className="text-xs text-muted-foreground">{s.date}</span>
-                    </div>
-                    <h4 className="font-semibold text-foreground leading-tight">{s.title}</h4>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Button variant="gradient" size="sm" asChild>
-                      <a href={s.video} target="_blank" rel="noopener noreferrer">
-                        <Play size={14} />
-                        Watch
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="sm" asChild>
-                      <a href={s.slides} target="_blank" rel="noopener noreferrer">
-                        <FileText size={14} />
-                        Slides
-                      </a>
-                    </Button>
-                    <Button variant="ghost" size="sm" asChild>
-                      <a href={s.notes} target="_blank" rel="noopener noreferrer">
-                        Notes
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+            <ResearchSessionList />
 
             {/* Coming soon placeholder */}
             <div className="rounded-2xl p-6 md:p-7 border border-dashed border-border/60 text-center">

@@ -1,55 +1,22 @@
-import { motion } from "framer-motion";
 import { Play } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ResearchSessionList from "@/components/ResearchSessionList";
+import { mainSessionCount } from "@/data/researchLab";
 
-const ease = [0.23, 1, 0.32, 1] as const;
-
-const Sessions = () => (
-  <div className="min-h-screen bg-background">
-    <Navbar />
-    <section className="pt-32 pb-28 md:pt-44 md:pb-40 relative">
-      <div className="gradient-mesh absolute inset-0 pointer-events-none" />
-      <div className="container relative">
-        <motion.div
-          className="max-w-2xl mx-auto text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease }}
-        >
-          <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-primary mb-6 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5">
-            <Play size={12} />
-            Sessions
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] font-display mb-6">
-            Our <span className="gradient-text">Sessions</span>
-          </h1>
-          <p className="text-muted-foreground text-lg mb-12">
-            Recorded talks, workshops, and knowledge-sharing sessions by BTAJI CREW members.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {["Tech Talks", "Workshops", "Guest Sessions"].map((title, i) => (
-              <motion.div
-                key={title}
-                className="glass-card rounded-2xl p-8 text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 + i * 0.1, ease }}
-              >
-                <Play size={28} className="text-primary mx-auto mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">{title}</h3>
-                <span className="inline-block text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-                  Coming Soon
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </section>
-    <Footer />
-  </div>
-);
-
-export default Sessions;
+export default function Sessions() {
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main className="container max-w-5xl pt-32 md:pt-44 pb-24">
+        <p className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary mb-5"><Play size={14} /> Learn with the crew</p>
+        <h1 className="text-4xl md:text-6xl font-bold font-display mb-6">Recorded <span className="gradient-text">sessions</span></h1>
+        <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mb-4">Explore {mainSessionCount} Research Lab sessions and a bonus LaTeX workshop, with recordings, slides, notes, and practical tasks.</p>
+        <Link to="/research-lab" className="text-primary hover:underline">About the Research Lab →</Link>
+        <div className="mt-10"><ResearchSessionList /></div>
+      </main>
+      <Footer />
+    </div>
+  );
+}

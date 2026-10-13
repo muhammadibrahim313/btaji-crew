@@ -28,9 +28,9 @@ We bring learning into practice through Kaggle competitions, collaborative proje
 | **Competitions** | Browse community competitions and their results, starting with StormCost. |
 | **StormCost leaderboard** | Final private standings, search by team or participant, and an individual certificate page for every participant. |
 | **Participant certificates** | Permanent participant links to view and download issued PDF certificates. |
-| **Research Lab** | An introduction to our free research series, with links to recordings and learning materials. |
+| **Research Lab** | Six research sessions and a bonus LaTeX workshop, with recordings, slides, notes, and practical tasks. |
 
-Dedicated Hackathons, Sessions, and Resources pages are currently marked **Coming Soon**.
+Dedicated Hackathons and Resources pages are currently marked **Coming Soon**. The Sessions page lists all seven Research Lab recordings.
 
 ### StormCost
 

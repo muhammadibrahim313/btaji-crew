@@ -8,7 +8,10 @@ export default function RouteScroll() {
       ? "StormCost Certificate"
       : pathname === "/competitions/storm-cost"
         ? "StormCost — Results & Certificates"
-        : pathname === "/competitions" ? "Competitions" : "Data Science & AI Community";
+        : pathname === "/competitions" ? "Competitions"
+        : pathname === "/research-lab" ? "Research Lab"
+        : pathname === "/sessions" ? "Recorded Sessions"
+        : "Data Science & AI Community";
     document.title = `${title} | BTAJI Crew`;
     const target = hash ? document.getElementById(hash.slice(1)) : null;
     if (target) target.scrollIntoView({ behavior: "instant" });
