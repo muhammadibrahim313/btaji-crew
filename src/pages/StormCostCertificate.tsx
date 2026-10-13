@@ -31,7 +31,7 @@ export default function StormCostCertificate() {
           <ArrowLeft size={15} /> StormCost leaderboard
         </Link>
         {member && team ? (
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
               <Award size={28} className="mx-auto text-primary mb-5" />
               <p className="text-xs uppercase tracking-[0.18em] text-primary mb-4">
@@ -72,15 +72,14 @@ export default function StormCostCertificate() {
                   </dd>
                 </div>
               </dl>
-              <div className="p-8 md:p-14 text-center">
+              <div className="p-5 md:p-8 text-center">
                 {pdf ? (
                   <>
-                    <Award size={40} className="text-primary mx-auto mb-5" />
                     <h2 className="text-2xl font-display font-semibold">
-                      Your certificate is ready
+                      Your certificate
                     </h2>
                     <p className="text-muted-foreground mt-3 mb-7">
-                      Open the official PDF or download a copy to keep.
+                      View your certificate below or download a copy to keep.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3">
                       <Button variant="gradient" asChild>
@@ -94,6 +93,24 @@ export default function StormCostCertificate() {
                         </a>
                       </Button>
                     </div>
+                    <a
+                      href={pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 block overflow-hidden rounded-lg border border-border bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                      aria-label={`Open full-size certificate for ${member.name}`}
+                    >
+                      <img
+                        src={pdf.replace(/\.pdf$/, ".jpg")}
+                        alt={`${member.name} — StormCost ${team.rank <= 3 ? "achievement" : "participation"} certificate, team rank ${team.rank}`}
+                        width={2000}
+                        height={1415}
+                        className="block h-auto w-full"
+                      />
+                    </a>
+                    <p className="mt-3 text-xs text-muted-foreground">
+                      Select the preview to open the full-size PDF.
+                    </p>
                   </>
                 ) : (
                   <>

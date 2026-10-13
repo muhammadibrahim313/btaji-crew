@@ -35,6 +35,11 @@ Only add approved certificates. Files in `public/` become publicly accessible af
 
 ## 3. Preview and verify
 
+Generate the inline previews after adding or replacing PDFs. With Poppler installed,
+run `bash scripts/render-certificate-previews.sh` from the repository root and
+commit the matching `.jpg` files alongside the PDFs. The preview is rendered from
+the original PDF; opening or downloading still uses the unchanged PDF.
+
 Restart the development server after adding files, then open the participant's page:
 
 ```text
@@ -44,7 +49,7 @@ http://127.0.0.1:8080/competitions/storm-cost/certificates/ayeshasal89
 Check that:
 
 - The recipient, team, rank, and score match the approved details.
-- The page shows **Your certificate is ready**.
+- The page shows the correct certificate preview under **Your certificate**.
 - **Open certificate** displays the correct PDF in a new tab.
 - **Download PDF** saves the same document.
 - For a multi-member team, each person's link opens their own certificate.
