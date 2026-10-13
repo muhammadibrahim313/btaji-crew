@@ -23,7 +23,7 @@ const hosts = [
   },
   {
     name: "Zulqarnain Ali",
-    role: "ML Researcher & Mentor — making hard ideas simple",
+    role: "ML Researcher & Mentor",
   },
 ];
 
@@ -72,9 +72,8 @@ const ResearchLab = () => (
             Learn how to actually <span className="gradient-text">do research</span>
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl mb-10 text-balance">
-            A free, community-led series that takes you from <em>"I want to do research"</em> to
-            reading papers, finding gaps, and writing your first one. No fluff. Just the practical
-            path.
+            Want to write your first research paper? Start here. These free sessions walk you through
+            reading papers, finding a research question, running experiments, and sharing your work.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="gradient" size="lg" asChild>
@@ -130,8 +129,8 @@ const ResearchLab = () => (
           </div>
           <p className="text-muted-foreground leading-relaxed text-lg">
             BTAJI Crew Research Lab is an open series of live sessions on how to do real research,
-            made for students and complete beginners. Every session is recorded, and the slides live
-            on GitHub — free — so anyone can follow along at their own pace.
+            made for students and complete beginners. Watch the recordings whenever you like,
+            and use the free slides and notes on GitHub to follow along.
           </p>
         </motion.div>
       </div>

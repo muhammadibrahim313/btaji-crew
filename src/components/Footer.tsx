@@ -16,7 +16,7 @@ const Footer = () => {
               <span className="text-lg font-semibold text-muted-foreground ml-1.5 tracking-wide">Crew</span>
             </Link>
             <p className="text-xs text-muted-foreground leading-relaxed max-w-[200px]">
-              Pakistan's premier AI & tech community — learn, build, and compete together.
+              A community for people learning and building with AI and data science.
             </p>
           </div>
 

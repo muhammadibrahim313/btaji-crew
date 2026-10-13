@@ -6,7 +6,7 @@
 
 **Learn together. Build with purpose. Grow through community.**
 
-The home of BTAJI Crew — a community of data scientists, machine learning engineers, researchers, and AI enthusiasts from Pakistan and beyond.
+The home of BTAJI Crew, a community of data scientists, machine learning engineers, researchers, and AI enthusiasts from Pakistan and beyond.
 
 [Visit the website](https://btaji-crew.ibrahimqasmi.com/) · [Competitions](https://btaji-crew.ibrahimqasmi.com/competitions) · [Research Lab](https://github.com/muhammadibrahim313/btaji-crew-research-lab) · [Join the community](https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh)
 
@@ -70,12 +70,12 @@ Have an idea, spotted an incorrect link, or want to improve the site? [Open an i
 
 For contribution guidance, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-- [WhatsApp community](https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh) — connect, ask questions, and learn together.
-- [LinkedIn](https://www.linkedin.com/company/btaji-crew) — follow community updates.
-- [YouTube](https://www.youtube.com/@Btajicrew) — watch recorded sessions.
-- [Facebook](https://web.facebook.com/people/Btaji-Crew/pfbid0mG46LWL6bmjqgnRDXLDzSwR1eLYSozQtg9cCjSWPYvP6SmmVo6EqG2Q4oSLR2fLKl/) — follow BTAJI Crew.
-- [Instagram](https://www.instagram.com/btajicrew/) — follow BTAJI Crew.
-- [Research Lab repository](https://github.com/muhammadibrahim313/btaji-crew-research-lab) — explore session notes, slides, and exercises.
+- [WhatsApp community](https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh) / connect, ask questions, and learn together.
+- [LinkedIn](https://www.linkedin.com/company/btaji-crew) / follow community updates.
+- [YouTube](https://www.youtube.com/@Btajicrew) / watch recorded sessions.
+- [Facebook](https://web.facebook.com/people/Btaji-Crew/pfbid0mG46LWL6bmjqgnRDXLDzSwR1eLYSozQtg9cCjSWPYvP6SmmVo6EqG2Q4oSLR2fLKl/) / follow BTAJI Crew.
+- [Instagram](https://www.instagram.com/btajicrew/) / follow BTAJI Crew.
+- [Research Lab repository](https://github.com/muhammadibrahim313/btaji-crew-research-lab) / explore session notes, slides, and exercises.
 
 ---
 

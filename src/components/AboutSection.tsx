@@ -73,8 +73,8 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2, ease }}
           >
             BTAJI CREW is a community of data scientists, ML engineers, and AI enthusiasts.
-            We learn, build, compete, and grow together — from Kaggle competitions to hackathons,
-            from open-source contributions to knowledge sharing.
+            We learn together through Kaggle competitions, research sessions, and shared projects.
+            Bring a question, share what you know, or join us for the next challenge.
           </motion.p>
         </div>
 

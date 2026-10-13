@@ -25,7 +25,7 @@ const Hackathons = () => (
             Our <span className="gradient-text">Hackathons</span>
           </h1>
           <p className="text-muted-foreground text-lg mb-12">
-            Build, innovate, and ship — hackathons hosted and conquered by BTAJI CREW.
+            Find hackathons and build projects with the crew. We’ll share upcoming events here.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

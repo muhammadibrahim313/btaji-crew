@@ -32,6 +32,12 @@ Choose a name that describes your own change. External contributors can fork the
 
 Website content is currently maintained in source files. There is no CMS or database to configure.
 
+## Writing style
+
+Use clear, friendly language and concrete details. Avoid em dashes in website copy,
+page titles, image descriptions, and documentation. Use a comma, a full stop, or a
+slash where it fits naturally. Avoid exaggerated claims and generic promotional phrases.
+
 ## Check your change
 
 Run the checks relevant to your work:

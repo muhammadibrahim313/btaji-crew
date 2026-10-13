@@ -102,7 +102,7 @@ export default function StormCostCertificate() {
                     >
                       <img
                         src={pdf.replace(/\.pdf$/, ".jpg")}
-                        alt={`${member.name} — StormCost ${team.rank <= 3 ? "achievement" : "participation"} certificate, team rank ${team.rank}`}
+                        alt={`${member.name}, StormCost ${team.rank <= 3 ? "achievement" : "participation"} certificate, team rank ${team.rank}`}
                         width={2000}
                         height={1415}
                         className="block h-auto w-full"

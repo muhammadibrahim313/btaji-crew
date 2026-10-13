@@ -7,7 +7,7 @@ export default function RouteScroll() {
     const title = pathname.includes("/competitions/storm-cost/certificates/")
       ? "StormCost Certificate"
       : pathname === "/competitions/storm-cost"
-        ? "StormCost — Results & Certificates"
+        ? "StormCost | Results & Certificates"
         : pathname === "/competitions" ? "Competitions"
         : pathname === "/research-lab" ? "Research Lab"
         : pathname === "/sessions" ? "Recorded Sessions"
