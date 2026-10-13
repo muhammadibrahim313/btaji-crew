@@ -184,7 +184,7 @@ export const stormCostTeams: StormCostTeam[] = [
     score: "41.43953",
     entries: 10,
     members: [
-      participant("Maniha Imaan", "maneehaeman"),
+      participant("Maniha Iman", "maneehaeman"),
       participant("Rao Muhammad Rayan Masood", "rayan444"),
     ],
   },
