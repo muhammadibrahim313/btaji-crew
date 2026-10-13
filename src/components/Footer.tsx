@@ -1,8 +1,9 @@
-import { Linkedin, Youtube, Instagram, Facebook } from "lucide-react";
+import { Linkedin, Youtube, Instagram, Facebook, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import { contactEmail } from "@/data/contact";
 import { socialLinks } from "@/data/socialLinks";
 
-const socialIcons = { LinkedIn: Linkedin, YouTube: Youtube, Instagram, Facebook };
+const socialIcons = { LinkedIn: Linkedin, YouTube: Youtube, Instagram, Facebook, Mail };
 
 const Footer = () => {
   return (
@@ -58,6 +59,9 @@ const Footer = () => {
                 );
               })}
             </div>
+            <a href={`mailto:${contactEmail}`} className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground break-all">
+              <Mail size={15} className="shrink-0" /> {contactEmail}
+            </a>
           </div>
         </div>
 

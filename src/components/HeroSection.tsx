@@ -1,3 +1,4 @@
+import { communityInviteUrl } from "@/data/contact";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
@@ -78,7 +79,7 @@ const HeroSection = () => {
             </a>
           </Button>
           <Button variant="ghost-glow" size="lg" className="text-base px-8 h-12" asChild>
-            <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer">
+            <a href={communityInviteUrl} target="_blank" rel="noopener noreferrer">
               Join Us
             </a>
           </Button>

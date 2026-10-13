@@ -1,3 +1,4 @@
+import { communityInviteUrl } from "@/data/contact";
 import { motion } from "framer-motion";
 import {
   FlaskConical,
@@ -43,7 +44,7 @@ const links = [
   {
     label: "WhatsApp Community",
     desc: "Join the conversation",
-    href: "https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh",
+    href: communityInviteUrl,
     icon: MessageCircle,
   },
 ];
@@ -88,7 +89,7 @@ const ResearchLab = () => (
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a
-                href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh"
+                href={communityInviteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >

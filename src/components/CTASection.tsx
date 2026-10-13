@@ -1,3 +1,4 @@
+import { communityInviteUrl, contactEmail } from "@/data/contact";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -47,7 +48,7 @@ const CTASection = () => {
             transition={{ duration: 0.8, delay: 0.2, ease }}
           >
             <Button variant="gradient" size="lg" className="text-base px-8 h-12" asChild>
-              <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer">
+              <a href={communityInviteUrl} target="_blank" rel="noopener noreferrer">
                 Join Our Community
                 <ArrowRight size={16} className="ml-1" />
               </a>
@@ -58,6 +59,10 @@ const CTASection = () => {
               </a>
             </Button>
           </motion.div>
+          <p className="mt-7 text-sm text-muted-foreground">
+            Have a question or want to collaborate?{" "}
+            <a href={`mailto:${contactEmail}`} className="text-primary hover:underline break-all">{contactEmail}</a>
+          </p>
           <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3">
             {socialLinks.filter((social) => social.name !== "LinkedIn").map((social) => (
               <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">{social.name}</a>

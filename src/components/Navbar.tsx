@@ -1,3 +1,4 @@
+import { communityInviteUrl } from "@/data/contact";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Linkedin, ChevronDown } from "lucide-react";
@@ -90,7 +91,7 @@ const Navbar = () => {
             </a>
           </Button>
           <Button variant="gradient" size="sm" asChild>
-            <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer">
+            <a href={communityInviteUrl} target="_blank" rel="noopener noreferrer">
               Join Community
             </a>
           </Button>
@@ -152,7 +153,7 @@ const Navbar = () => {
                   <Linkedin size={20} />
                 </a>
                 <Button variant="gradient" className="flex-1" asChild>
-                  <a href="https://chat.whatsapp.com/E29f5rozhAo8RbKjA00eSh" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+                  <a href={communityInviteUrl} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
                     Join Community
                   </a>
                 </Button>
