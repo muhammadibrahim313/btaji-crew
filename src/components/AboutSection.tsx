@@ -3,7 +3,7 @@ import { useRef, useEffect, useState } from "react";
 import { Users, FolderGit2, Trophy, Heart } from "lucide-react";
 
 const stats = [
-  { icon: Users, label: "Crew", value: 10, suffix: "+", desc: "Active team members building AI" },
+  { icon: Users, label: "Crew", value: 5, suffix: "", desc: "Active team members building AI" },
   { icon: FolderGit2, label: "Projects", value: 15, suffix: "+", desc: "Real-world projects shipped" },
   { icon: Trophy, label: "Competitions", value: 5, suffix: "+", desc: "Kaggle & hackathon entries" },
   { icon: Heart, label: "Community", value: 100, suffix: "+", desc: "Members across Pakistan" },
