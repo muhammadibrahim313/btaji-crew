@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Linkedin, ChevronDown, FlaskConical } from "lucide-react";
+import { Menu, X, Linkedin, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
@@ -58,16 +58,11 @@ const Navbar = () => {
             </a>
           ))}
 
-          {/* Research Lab highlighted */}
           <Link
             to="/research-lab"
-            className="relative text-sm font-medium text-foreground px-4 py-2 rounded-full inline-flex items-center gap-1.5 border border-primary/30 bg-primary/10 hover:bg-primary/15 transition-all duration-300"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 px-4 py-2 rounded-full hover:bg-muted/50"
           >
-            <FlaskConical size={14} className="text-primary" />
             Research Lab
-            <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full gradient-bg text-white">
-              New
-            </span>
           </Link>
 
           {tailLinks.map((link) => (
@@ -169,14 +164,10 @@ const Navbar = () => {
               ))}
               <Link
                 to="/research-lab"
-                className="text-lg font-medium text-foreground py-3 px-4 rounded-xl border border-primary/30 bg-primary/10 inline-flex items-center gap-2"
+                className="text-lg text-muted-foreground hover:text-foreground transition-colors py-3 px-4 rounded-xl hover:bg-muted/30"
                 onClick={() => setMobileOpen(false)}
               >
-                <FlaskConical size={16} className="text-primary" />
                 Research Lab
-                <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full gradient-bg text-white ml-auto">
-                  New
-                </span>
               </Link>
               {tailLinks.map((link) => (
                 <a
